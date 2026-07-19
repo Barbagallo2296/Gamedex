@@ -3,7 +3,7 @@ function App() {
     <>
       <div>
         <h1>Gamedex</h1>
-        <p>Se leggi questo, il progetto parte 🎮</p>
+        <p>Prova sito </p>
       </div>
     </>
   )
