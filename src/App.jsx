@@ -1,10 +1,11 @@
+import Navbar from './components/Navbar.jsx'
+import Home from './pages/Home.jsx'
+
 function App() {
   return (
     <>
-      <div>
-        <h1>Gamedex</h1>
-        <p>Prova sito </p>
-      </div>
+      <Navbar />
+      <Home />
     </>
   )
 }
