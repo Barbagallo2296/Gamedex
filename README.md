@@ -1,16 +1,62 @@
-# React + Vite
+# 🎮 Gamedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Un catalogo di videogiochi realizzato con React.
+Permette di sfogliare i giochi dalla RAWG API, vederne i dettagli e salvare i preferiti.
 
-Currently, two official plugins are available:
+## Tecnologie utilizzate
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React** (Vite) — libreria UI e strumento di build
+- **React Router v8** — routing lato client in modalità dichiarativa
+- **Material UI (MUI) v9** — libreria di componenti e gestione del tema
+- **React Hook Form v7** — gestione e validazione dei form
+- **RAWG API** — fonte dati dei videogiochi
 
-## React Compiler
+## Funzionalità
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Cambio tema chiaro / scuro (gestito con React Context, salvato in `localStorage`)
+- Routing dichiarativo su più pagine
+- (In arrivo) Ricerca e navigazione dei giochi tramite RAWG API
+- (In arrivo) Autenticazione simulata (registrazione / login) con React Context
 
-## Expanding the Oxlint configuration
+## Come avviare il progetto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Prerequisiti
+
+- Node.js 22.22 o superiore
+- npm
+
+### Installazione
+
+```bash
+# Clona il repository
+git clone https://github.com/Barbagallo2296/Gamedex.git
+cd Gamedex
+
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo
+npm run dev
+```
+
+L'app sarà disponibile su `http://localhost:5173`.
+
+## Struttura del progetto
+```
+Gamedex/
+├── public/
+├── src/
+│   ├── api/          Chiamate alla RAWG API
+│   ├── components/   Componenti riutilizzabili (Navbar, ...)
+│   ├── context/      Provider di React Context (ThemeContext)
+│   ├── pages/        Un componente per ogni rotta (Home, GameDetail, Preferiti ecc...)
+│   ├── App.jsx       Definizione delle rotte
+│   └── main.jsx      
+├── index.html
+├── package.json
+└── README.md
+```
+
+## Autore
+
+Manuel Barbagallo — [GitHub](https://github.com/Barbagallo2296) · [LinkedIn](https://www.linkedin.com/in/manuel-barbagallo/)
