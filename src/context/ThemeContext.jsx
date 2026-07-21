@@ -10,7 +10,6 @@ export function ThemeModeProvider({ children }) {
         return localStorage.getItem('themeMode') || 'dark'
     })
 
-    // useeffect si aggiorna ad ogni cambio di mode 
     useEffect(() => {
         localStorage.setItem('themeMode', mode)
     }, [mode])
@@ -26,7 +25,7 @@ export function ThemeModeProvider({ children }) {
             createTheme({
                 palette: {
                     mode,
-                    primary: { main: '#7c4dff' },
+                    primary: { main: '#4d68ff' },
                     secondary: { main: '#00e5ff' },
                 },
             }),
@@ -34,7 +33,7 @@ export function ThemeModeProvider({ children }) {
     )
 
     return (
-                                     // questo va nella navbar
+        // questo va nella navbar
         <ThemeModeContext.Provider value={{ mode, toggleMode }}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
