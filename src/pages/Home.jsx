@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Container, Grid, CircularProgress, Box, Typography, TextField } from '@mui/material'
 import { getGames } from '../api/rawg.js'
 import GameCard from '../components/GameCard.jsx'
+import GameCardSkeleton from '../components/GameCardSkeleton.jsx'
 
 function Home() {
   const [games, setGames] = useState([])
@@ -29,9 +30,13 @@ function Home() {
       />
 
       {loading && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
-          <CircularProgress />
-        </Box>
+        <Grid container spacing={3}>
+          {Array.from({ length: 8 }).map((_, index) => (
+            <Grid key={index} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <GameCardSkeleton />
+            </Grid>
+          ))}
+        </Grid>
       )}
 
       {error && <Typography color="error">{error}</Typography>}
