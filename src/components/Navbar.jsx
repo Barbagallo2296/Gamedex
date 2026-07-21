@@ -9,6 +9,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import { Link } from 'react-router'
 import { ThemeModeContext } from '../context/ThemeContext.jsx'
 import { AuthContext } from '../context/AuthContext.jsx'
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
 
 function Navbar() {
   const { mode, toggleMode } = useContext(ThemeModeContext)
@@ -28,22 +29,31 @@ function Navbar() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography
-          variant="h6"
+       <Box
           component={Link}
           to="/"
-          sx={{ flexGrow: 1, color: 'inherit', textDecoration: 'none' }}
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1,
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
         >
-          🎮 Gamedex
-        </Typography>
+          <SportsEsportsIcon sx={{ color: 'primary.main', fontSize: 28 }} />
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            Gamedex
+          </Typography>
+        </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" size="large" component={Link} to="/">Home</Button>
 
 
           {user ? (
             <>
-              <Button color="inherit" component={Link} to="/favorites">Preferiti</Button>
+              <Button color="inherit" size="large" component={Link} to="/favorites">Preferiti</Button>
 
               <IconButton onClick={handleOpenMenu} sx={{ p: 0, ml: 1 }}>
                 <Avatar
@@ -75,8 +85,8 @@ function Navbar() {
             </>
           ) : (
             <>
-              <Button color="inherit" component={Link} to="/login">Login</Button>
-              <Button color="inherit" component={Link} to="/register">Registrati</Button>
+              <Button color="inherit" size="large" component={Link} to="/login">Login</Button>
+              <Button color="inherit" size="large" component={Link} to="/register">Registrati</Button>
             </>
           )}
 

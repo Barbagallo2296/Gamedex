@@ -24,7 +24,18 @@ function GameCard({ game }) {
   }
 
   return (
-    <Card sx={{ height: '100%', position: 'relative' }}>
+    <Card
+      sx={{
+        height: '100%',
+        position: 'relative',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
+        '&:hover': {
+          transform: 'translateY(-4px)',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+          borderColor: 'primary.main',
+        },
+      }}
+    >
       <IconButton
         onClick={handleFavoriteClick}
         sx={{

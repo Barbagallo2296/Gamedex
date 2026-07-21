@@ -20,13 +20,22 @@ function Home() {
 
   return (
     <Container sx={{ mt: 4 }}>
+      <Box sx={{ textAlign: 'center', mb: 4 }}>
+        <Typography variant="h3" gutterBottom>
+          Esplora i videogiochi
+        </Typography>
+        <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400 }}>
+          Cerca, scopri e salva i tuoi titoli preferiti
+        </Typography>
+      </Box>
+
       <TextField
         fullWidth
         label="Cerca un gioco..."
         variant="outlined"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        sx={{ mb: 3 }}
+        sx={{ mb: 4, maxWidth: 600, mx: 'auto', display: 'block' }}
       />
 
       {loading && (
