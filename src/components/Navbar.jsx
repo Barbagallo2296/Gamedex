@@ -40,13 +40,16 @@ function Navbar() {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Button color="inherit" component={Link} to="/">Home</Button>
 
-    
+
           {user ? (
             <>
               <Button color="inherit" component={Link} to="/favorites">Preferiti</Button>
 
               <IconButton onClick={handleOpenMenu} sx={{ p: 0, ml: 1 }}>
-                <Avatar sx={{ bgcolor: 'secondary.main', width: 36, height: 36 }}>
+                <Avatar
+                  src={user.avatar}
+                  sx={{ bgcolor: 'secondary.main', width: 36, height: 36 }}
+                >
                   {user.username.charAt(0).toUpperCase()}
                 </Avatar>
               </IconButton>

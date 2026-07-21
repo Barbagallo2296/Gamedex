@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
     }
   }, [user])
 
-  const register = ({ username, email, password }) => {
+  const register = ({ username, email, password, avatar }) => {
     const users = JSON.parse(localStorage.getItem('users') || '[]')
 
     const exists = users.some((u) => u.email === email)
@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
       return { success: false, message: 'Email già registrata' }
     }
 
-    const newUser = { username, email, password }
+    const newUser = { username, email, password, avatar }
     users.push(newUser)
     localStorage.setItem('users', JSON.stringify(users))
     return { success: true }
@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
       return { success: false, message: 'Credenziali errate' }
     }
 
-    setUser({ username: found.username, email: found.email })
+    setUser({ username: found.username, email: found.email, avatar: found.avatar})
     return { success: true }
   }
 
