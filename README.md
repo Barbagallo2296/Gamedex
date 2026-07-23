@@ -5,6 +5,10 @@ Permette di sfogliare i giochi dalla RAWG API, vederne i dettagli, cercarli e sa
 
 Progetto sviluppato per il corso Full Stack di ITS Prodigi.
 
+## Anteprima
+
+![Home di Gamedex](screenshots/home.png)
+
 ## Tecnologie utilizzate
 
 - **React** (Vite) — libreria UI e strumento di build
@@ -51,10 +55,7 @@ L'app usa la RAWG API, che richiede una chiave gratuita.
 
 1. Registrati su [rawg.io/apidocs](https://rawg.io/apidocs) e ottieni la tua API key.
 2. Crea un file `.env` nella radice del progetto (puoi partire copiando `.env.example`).
-3. Inserisci la chiave così:
-
-   VITE_RAWG_KEY=la_tua_chiave_rawg
-
+3. Inserisci la chiave così: `VITE_RAWG_KEY=la_tua_chiave_rawg`
 
 ### Avvio
 
@@ -64,21 +65,39 @@ npm run dev
 
 L'app sarà disponibile su `http://localhost:5173`.
 
+### Come provare l'applicazione
+
+L'autenticazione è simulata e i dati vengono salvati nel `localStorage` del browser:
+al primo avvio non esiste nessun utente registrato.
+
+Per provare login e preferiti:
+
+1. Andare su **Registrati** e creare un account (le credenziali sono libere; la
+   password deve avere almeno 8 caratteri, una maiuscola e un numero).
+2. Accedere dalla pagina **Login** con le stesse credenziali.
+3. Da autenticati è possibile salvare i giochi con il cuore sulle card e
+   consultarli nella pagina **Preferiti** (accessibile solo da loggati).
+
+Il campo "URL immagine profilo" in registrazione è opzionale: se lasciato vuoto,
+l'avatar mostrerà l'iniziale dello username.
+
 ## Struttura del progetto
 
 ```
 Gamedex/
-├── public/
+├── public/                   File statici (favicon)
+├── screenshots/              Immagine per il README
 ├── src/
-│ ├── api/ Chiamate alla RAWG API
-│ ├── components/ Componenti riutilizzabili (Navbar, GameCard, ProtectedRoute, ...)
-│ ├── context/ Provider di React Context (Theme, Auth, Favorites)
-│ ├── pages/ Un componente per ogni rotta (Home, GameDetail, , Login, ... )
-│ ├── App.jsx Definizione delle rotte
-│ └── main.jsx Punto di ingresso dell'app
-├── .env.example
+│   ├── api/                  Chiamate alla RAWG API
+│   ├── components/           Componenti riutilizzabili (Navbar, GameCard, ProtectedRoute, ...)
+│   ├── context/              Provider di React Context (Theme, Auth, Favorites)
+│   ├── pages/                Un componente per ogni rotta (Home, GameDetail, Login, ...)
+│   ├── App.jsx               Definizione delle rotte
+│   └── main.jsx              Punto di ingresso dell'app
+├── .env.example              Esempio di variabili d'ambiente
 ├── index.html
 ├── package.json
+├── vite.config.js
 └── README.md
 ```
 
@@ -93,6 +112,16 @@ Gamedex/
 - Preferiti separati per singolo utente
 - Debounce sulla barra di ricerca per ridurre le chiamate all'API
 - Filtri per genere e piattaforma, ordinamento dei risultati
+
+## Riferimenti utili
+
+- [React – documentazione ufficiale](https://react.dev)
+- [React Router – documentazione](https://reactrouter.com)
+- [Material UI – componenti](https://mui.com/material-ui/)
+- [React Hook Form](https://react-hook-form.com)
+- [RAWG API – documentazione](https://rawg.io/apidocs)
+- [Vite – guida](https://vite.dev)
+- [npm – verifica versioni dei pacchetti](https://www.npmjs.com)
 
 ## Autore
 
